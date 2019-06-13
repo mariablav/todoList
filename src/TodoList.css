@@ -1,0 +1,79 @@
+.todoListMain {
+  margin: 20px auto 20px auto;
+  width: 500px;
+  position: absolute;
+  min-height: 600px;
+  padding: 20px;
+  background-color: #dce0e0;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 5%;
+}
+
+.todoListMain .header input {
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  width: 375px;
+  border-radius: 5px;
+}
+
+.todoListMain .header button {
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #0066ff;
+  color: #fff;
+  border: 2px solid #0066ff;
+  float: right;
+  border-radius: 5px;
+}
+
+.todoListMain .header button:hover {
+  background-color: #003399;
+  border: 2px solid #003399;
+  cursor: pointer;
+}
+
+.todoListMain .todoList li {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  list-style: none;
+
+  transition: background-color 0.2s ease-out;
+}
+
+.todoListMain .todoList li:hover {
+  background-color: #ffc1f7;
+  cursor: pointer;
+}
+
+ul.todoList {
+  padding: 0;
+}
+
+.todoListMain .todoList .todoItem input {
+  margin-right: 10px;
+}
+
+.todoListMain .todoList .todoItem button {
+  font-size: 16px;
+  color: white;
+  background-color: #ff7c7c;
+  border-color: #ff7c7c;
+  height: width;
+  border-radius: 50%;
+  float: right;
+}
+
+.todoListMain .todoList .todoItem button:hover {
+  background-color: #ff1212;
+  border-color: #ff1212;
+  cursor: pointer;
+}
