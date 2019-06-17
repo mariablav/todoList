@@ -63,8 +63,6 @@ class TodoList extends Component {
             <input
               ref={a => (this._inputElement = a)}
               placeholder="enter task"
-              data-testid="newItemField"
-              s
             />
             <button data-testid="addBtn" type="submit">
               add
