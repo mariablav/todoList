@@ -7,17 +7,23 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
-      items: []
+      items: [],
+      value: ""
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
   }
 
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
   addItem(e) {
-    if (this._inputElement.value !== "") {
+    if (this.state.value !== "") {
       var newItem = {
-        text: this._inputElement.value,
+        text: this.state.value,
         key: Date.now(),
         done: false
       };
@@ -28,8 +34,7 @@ class TodoList extends Component {
         };
       });
     }
-
-    this._inputElement.value = "";
+    this.setState({ value: "" });
 
     console.log(this.state.items);
 
@@ -61,7 +66,8 @@ class TodoList extends Component {
         <div className="header">
           <form onSubmit={this.addItem}>
             <input
-              ref={a => (this._inputElement = a)}
+              value={this.state.value}
+              onChange={this.handleChange}
               placeholder="enter task"
             />
             <button data-testid="addBtn" type="submit">

@@ -4,11 +4,11 @@ import { css, jsx } from "@emotion/core";
 import withProps from "recompose/withProps";
 import styled from "@emotion/styled";
 
-// Here I'm trying to create RoundCheckBox with "emotion". At the moment RoundCheckBox does not change color onClick. The propblem is that I don't know how to provide {item.done} value to the RoundCheckBox
+// //Here I'm trying to create RoundCheckBox with "emotion". At the moment RoundCheckBox does not change color onClick. The propblem is that I don't know how to take the value of props in "background-color"
 // const RoundCheckBox = withProps({ type: "checkbox" })(styled("input")`
 //   width: 1.3em;
 //   height: 1.3em;
-//   background-color: ${props => (props.true ? "green" : "yellow")};
+//   background-color: ${props => (props.value ? "green" : "white")};
 //   border-radius: 50%;
 //   vertical-align: middle;
 //   border: 1px solid #ddd;
@@ -31,7 +31,10 @@ class TodoItems extends Component {
             onClick={this.props.toggleDone.bind(this, item.key)}
             state
           />
-          {/* <RoundCheckBox  {item.done} onClick={this.props.toggleDone.bind(this, item.key)} /> */}
+          {/* <RoundCheckBox
+            {...item.done}
+            onClick={this.props.toggleDone.bind(this, item.key)}
+          /> */}
           <span
             style={{ textDecoration: item.done ? "line-through" : "inherit" }}
           >
