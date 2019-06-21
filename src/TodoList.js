@@ -7,7 +7,7 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
-      items: [],
+      items: props.entries || [],
       value: ""
     };
 
@@ -35,8 +35,6 @@ class TodoList extends Component {
       });
     }
     this.setState({ value: "" });
-
-    console.log(this.state.items);
 
     e.preventDefault();
   }
@@ -70,9 +68,7 @@ class TodoList extends Component {
               onChange={this.handleChange}
               placeholder="enter task"
             />
-            <button data-testid="addBtn" type="submit">
-              add
-            </button>
+            <button type="submit">add</button>
           </form>
         </div>
         <TodoItems
